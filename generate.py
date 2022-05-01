@@ -188,7 +188,7 @@ def get_variable_descriptions(root: MarkdownSection) -> dict[str, str]:
         if line.startswith("* **") or line.startswith("- **"):
             names, description = parse_variable_description_line(line)
             for name in names:
-                descriptions[name] = description
+                descriptions[name] = replace_relative_links(description)
 
     # TYPO: Because a line explaning the variable "value" in `peek` is missing,
     # It is hard-coded here
@@ -198,11 +198,11 @@ def get_variable_descriptions(root: MarkdownSection) -> dict[str, str]:
     # TYPO: Because "bitaddr", "bitval", "addr2", "addr4", "val2", "val4" are
     # not explicitly explained in `peek` and `poke`, it is hard-coded here
     if root.name == "peek*" or root.name == "poke*":
-        descriptions["bitaddr"] = "the address of [RAM](RAM) you desire to write"
+        descriptions["bitaddr"] = "the address of `RAM` you desire to write"
         descriptions["bitval"] = "the integer value write to RAM"
-        descriptions["addr2"] = "the address of [RAM](RAM) you desire to write (segmented on 2)"
+        descriptions["addr2"] = "the address of `RAM` you desire to write (segmented on 2)"
         descriptions["val2"] = "the integer value write to RAM (segmented on 2)"
-        descriptions["addr4"] = "the address of [RAM](RAM) you desire to write (segmented on 4)"
+        descriptions["addr4"] = "the address of `RAM` you desire to write (segmented on 4)"
         descriptions["val4"] = "the integer value write to RAM (segmented on 4)"
 
     # Because the return type in `fget` is "bool" and is not explicitly documented

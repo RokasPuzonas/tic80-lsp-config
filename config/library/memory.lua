@@ -51,7 +51,7 @@ function peek(addr, bits) end
 ---
 ---- `poke` - Write to a memory address
 ---
----@param bitaddr number # the address of [RAM](RAM) you desire to write
+---@param bitaddr number # the address of `RAM` you desire to write
 ---@return number bitval # the integer value write to RAM
 function peek1(bitaddr) end
 
@@ -64,7 +64,7 @@ function peek1(bitaddr) end
 ---
 ---- `poke` - Write to a memory address
 ---
----@param addr2 number # the address of [RAM](RAM) you desire to write (segmented on 2)
+---@param addr2 number # the address of `RAM` you desire to write (segmented on 2)
 ---@return number val2 # the integer value write to RAM (segmented on 2)
 function peek2(addr2) end
 
@@ -77,7 +77,7 @@ function peek2(addr2) end
 ---
 ---- `poke` - Write to a memory address
 ---
----@param addr4 number # the address of [RAM](RAM) you desire to write (segmented on 4)
+---@param addr4 number # the address of `RAM` you desire to write (segmented on 4)
 ---@return number val4 # the integer value write to RAM (segmented on 4)
 function peek4(addr4) end
 
@@ -104,7 +104,7 @@ function poke(addr, val, bits) end
 ---
 ---- `peek` - Read from a memory address
 ---
----@param bitaddr number # the address of [RAM](RAM) you desire to write
+---@param bitaddr number # the address of `RAM` you desire to write
 ---@param bitval number # the integer value write to RAM
 function poke1(bitaddr, bitval) end
 
@@ -117,7 +117,7 @@ function poke1(bitaddr, bitval) end
 ---
 ---- `peek` - Read from a memory address
 ---
----@param addr2 number # the address of [RAM](RAM) you desire to write (segmented on 2)
+---@param addr2 number # the address of `RAM` you desire to write (segmented on 2)
 ---@param val2 number # the integer value write to RAM (segmented on 2)
 function poke2(addr2, val2) end
 
@@ -130,7 +130,7 @@ function poke2(addr2, val2) end
 ---
 ---- `peek` - Read from a memory address
 ---
----@param addr4 number # the address of [RAM](RAM) you desire to write (segmented on 4)
+---@param addr4 number # the address of `RAM` you desire to write (segmented on 4)
 ---@param val4 number # the integer value write to RAM (segmented on 4)
 function poke4(addr4, val4) end
 

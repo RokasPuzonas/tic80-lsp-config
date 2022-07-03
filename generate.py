@@ -1,6 +1,7 @@
 #!/bin/python3
 import requests
 from os import path
+import os
 import re
 from dataclasses import dataclass
 
@@ -321,7 +322,8 @@ def create_lua_function(function_name: str):
     return doc_comment + "\n" + func_signature
 
 def main():
-    library_path = "config/library"
+    library_path = "library"
+    os.makedirs(library_path, exist_ok=True)
     for section_name, funcs in list_available_functions().items():
         with open(f"{library_path}/{section_name}.lua", "w") as f:
             f.write("---@meta\n\n")
